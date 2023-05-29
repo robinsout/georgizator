@@ -1,11 +1,29 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
+  "compilerOptions": {
+    "outDir": "./public",
+    "allowJs": true,
+    "strict": true,
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "types": ["vue", "node"],
+    "lib": ["webworker", "es2020", "dom"],
+    "paths": {
+      "@/*": ["*"],
+      "@shared/*": ["shared/*"],
+      "@features/*": ["features/*"],
+      "@test/*": ["test/*"],
+      "@config/*": ["app/config/*"],
+      "@assets/*": ["assets/*"],
     }
-  ],
+  },
+  "exclude": ["node_modules/", "src/test/build/", "src/renderers/", "public/"]
 }

@@ -20,6 +20,6 @@ const router = createRouter({
       component: () => import('../views/GeorgizatorView.vue')
     }
   ]
-})
+});
 
-export default router
+export default router;

@@ -1,11 +1,23 @@
 <template>
   <header>
-    <img alt="Georgian flag" class="flag" src="@/assets/flag-of-georgia.svg" width="125" height="125" />
+    <img
+      alt="Georgian flag"
+      class="flag"
+      src="@/assets/flag-of-georgia.svg"
+      width="125"
+      height="125"
+    >
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">О программе</RouterLink>
-        <RouterLink to="/alphabet">Алфавит</RouterLink>
-        <RouterLink to="/georgizator">Грузинизатор</RouterLink>
+        <RouterLink to="/">
+          О программе
+        </RouterLink>
+        <RouterLink to="/alphabet">
+          Алфавит
+        </RouterLink>
+        <RouterLink to="/georgizator">
+          Грузинизатор
+        </RouterLink>
       </nav>
     </div>
   </header>
