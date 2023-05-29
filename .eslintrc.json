@@ -55,7 +55,8 @@
       "@typescript-eslint/prefer-nullish-coalescing": "off",
       "node/no-path-concat": "off",
       "@typescript-eslint/return-await": "off",
-      "space-before-function-paren":"off"
+      "space-before-function-paren":"off",
+      "@typescript-eslint/comma-dangle": "off"
   },
   "ignorePatterns": ["/node_modules/", "dist/", "build/", "public/"]
 }
