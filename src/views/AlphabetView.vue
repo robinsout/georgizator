@@ -1,5 +1,6 @@
 <template>
   <main>
+    <h1>Алфавит</h1>
     <Alphabet />
   </main>
 </template>
