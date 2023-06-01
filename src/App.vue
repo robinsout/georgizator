@@ -16,7 +16,7 @@
           Алфавит
         </RouterLink>
         <RouterLink to="/georgizator">
-          Грузинизатор
+          Грузификатор
         </RouterLink>
       </nav>
     </div>
@@ -27,12 +27,17 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
+import { useGeorgizator } from '@/stores/georgizator.store';
 
 export default defineComponent({
   name: 'App',
   components: {
     RouterLink,
     RouterView,
+  },
+  setup() {
+    useGeorgizator().initMapping();
+    useGeorgizator().processText();
   },
 });
 </script>

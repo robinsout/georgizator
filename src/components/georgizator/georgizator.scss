@@ -1,0 +1,44 @@
+.georgizator {
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__label {
+    margin-right: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: gray;
+  }
+
+  &__transformation-percent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    &__select {
+      background-color: transparent;
+      color: inherit;
+      width: 3.2rem;
+      font-size: 1rem;
+      border: none;
+    }
+  }
+
+  &__input-text {
+    white-space: pre-wrap;
+    margin-bottom: 1rem;
+    width: 100%;
+    font-weight: 600;
+    color: blanchedalmond;
+  }
+
+  &__output-text {
+    margin-bottom: 1rem;
+    color:darksalmon
+  }
+}
