@@ -1,7 +1,7 @@
 <template>
   <div class="georgizator">
     <div class="georgizator__transformation-percent">
-      <span class="georgizator__label">Процент грузификации: </span>
+      <span class="georgizator__label">Процент грузификации алфавита: </span>
       <select v-model="transliterationPercent" class="georgizator__transformation-percent__select">
         <option v-for="percent in transformPercents" :key="percent" :value="percent">
           {{ percent }}
@@ -15,10 +15,9 @@
       class="georgizator__input-text"
       contenteditable
       autofocus
+      :innerText="inputContent"
       @input="updateInputText"
-    >
-      {{ inputContent }}
-    </div>
+    />
     <span class="georgizator__label">Грузифицированный текст</span>
     <div class="georgizator__output-text">
       {{ transformedText }}

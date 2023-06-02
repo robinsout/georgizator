@@ -13,7 +13,7 @@ export const useGeorgizator = defineStore({
   id: 'GeorgizatorStore',
   state: (): GeorgizatorState => ({
     inputText: 'Начните вводить текст',
-    transliterationPercent: 40,
+    transliterationPercent: 30,
     transformedText: 'Это трансформированный текст',
     cyrillicMapping: {},
   }),
@@ -21,10 +21,21 @@ export const useGeorgizator = defineStore({
     processText(newInputText?: string) {
       this.inputText = newInputText || this.inputText;
 
-      const transformedText = this.inputText.split('').map((char) => {
-        const georgizatorChar = this.cyrillicMapping[char.toLocaleLowerCase()]?.georgian.letter;
+      const inputTextSet = new Set(this.inputText.split(''));
+      const sybmolsToTransform = Array.from(inputTextSet).filter((char) => {
+        if (!char.match(/\p{Letter}/gu)) {
+          return false;
+        }
 
-        const transformedChar = (Math.random() * 100) < this.transliterationPercent
+        return (Math.random() * 100) < this.transliterationPercent
+          ? char.toLowerCase()
+          : false;
+      });
+
+      const transformedText = this.inputText.split('').map((char) => {
+        const georgizatorChar = this.cyrillicMapping[char.toLowerCase()]?.georgian.letter;
+
+        const transformedChar = sybmolsToTransform.includes(char.toLowerCase())
           ? (georgizatorChar || char)
           : char;
 
