@@ -30,7 +30,7 @@ import { RouterLink, RouterView } from 'vue-router';
 import { useGeorgizator } from '@/stores/georgizator.store';
 
 export default defineComponent({
-  name: 'App',
+  name: 'GeorgizatorApp',
   components: {
     RouterLink,
     RouterView,
