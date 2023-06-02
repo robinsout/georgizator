@@ -16,7 +16,6 @@ export default defineComponent({
 
     const updateInputText = (event) => {
       georgizatorStore.processText(event.target?.innerText as string);
-      inputContent.value = inputText.value;
     };
 
     const transformPercents = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
