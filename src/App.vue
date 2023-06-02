@@ -9,9 +9,9 @@
     >
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">
+        <!-- <RouterLink to="/">
           О программе
-        </RouterLink>
+        </RouterLink> -->
         <RouterLink to="/alphabet">
           Алфавит
         </RouterLink>
@@ -54,7 +54,7 @@ header {
 }
 
 nav {
-  width: 100%;
+  width: 60%;
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
