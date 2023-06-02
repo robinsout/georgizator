@@ -16,6 +16,7 @@
       contenteditable
       autofocus
       :innerText="inputContent"
+      onclick="document.execCommand('selectAll', false, null)"
       @input="updateInputText"
     />
     <span class="georgizator__label">Грузифицированный текст</span>
