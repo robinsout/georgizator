@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import AboutView from '../views/AboutView.vue';
+// import AboutView from '../views/AboutView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,19 +7,19 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: AboutView
+      redirect: '/georgizator',
     },
     {
       path: '/alphabet',
       name: 'alphabet',
-      component: () => import('../views/AlphabetView.vue')
+      component: () => import('../views/AlphabetView.vue'),
     },
     {
       path: '/georgizator',
       name: 'georgizator',
-      component: () => import('../views/GeorgizatorView.vue')
-    }
-  ]
+      component: () => import('../views/GeorgizatorView.vue'),
+    },
+  ],
 });
 
 export default router;
