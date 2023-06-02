@@ -1,6 +1,9 @@
 <template>
   <div>
-    <p v-for="letterMapping in alphabetMap" :key="letterMapping.latin">
+    <p
+      v-for="letterMapping in alphabetMap"
+      :key="letterMapping.latin.letter"
+    >
       {{ letterMapping.georgian.letter }} - {{ letterMapping.cyrillic.letter }}
     </p>
   </div>
