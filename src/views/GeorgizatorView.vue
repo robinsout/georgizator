@@ -1,6 +1,5 @@
 <template>
   <main>
-    <h1>Грузификатор</h1>
     <Georgizator />
   </main>
 </template>

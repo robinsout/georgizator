@@ -1,6 +1,5 @@
 <template>
   <main class="alphabet-view__container">
-    <h1>Алфавит</h1>
     <Alphabet />
   </main>
 </template>
