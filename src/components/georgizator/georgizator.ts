@@ -6,16 +6,17 @@ export default defineComponent({
   name: 'Georgizator',
   setup() {
     const georgizatorStore = useGeorgizator();
+    const { processText } = georgizatorStore;
     const { inputText, transliterationPercent, transformedText } = storeToRefs(georgizatorStore);
 
     const inputContent = ref(inputText.value);
 
     watch(transliterationPercent, () => {
-      georgizatorStore.processText(inputText.value);
+      processText(inputText.value);
     });
 
     const updateInputText = (event) => {
-      georgizatorStore.processText(event.target?.innerText as string);
+      processText(event.target?.innerText as string);
     };
 
     const transformPercents = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
