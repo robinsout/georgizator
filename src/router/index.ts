@@ -7,18 +7,18 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      redirect: '/georgizator',
-    },
-    {
-      path: '/alphabet',
-      name: 'alphabet',
-      component: () => import('../views/AlphabetView.vue'),
-    },
-    {
-      path: '/georgizator',
-      name: 'georgizator',
       component: () => import('../views/GeorgizatorView.vue'),
     },
+    // {
+    //   path: '/alphabet',
+    //   name: 'alphabet',
+    //   component: () => import('../views/AlphabetView.vue'),
+    // },
+    // {
+    //   path: '/georgizator',
+    //   name: 'georgizator',
+    //   component: () => import('../views/GeorgizatorView.vue'),
+    // },
   ],
 });
 

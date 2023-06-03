@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="alphabet-view__container">
     <h1>Алфавит</h1>
     <Alphabet />
   </main>
@@ -16,3 +16,14 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.alphabet-view__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-bottom: 12px;
+}
+</style>

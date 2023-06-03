@@ -1,39 +1,31 @@
 <template>
-  <header>
+  <div class="flag__container">
     <img
       alt="Georgian flag"
-      class="flag"
+      class="flag__image"
       src="@/assets/flag-of-georgia.svg"
       width="125"
       height="125"
     >
-    <div class="wrapper">
-      <nav>
-        <!-- <RouterLink to="/">
-          О программе
-        </RouterLink> -->
-        <RouterLink to="/alphabet">
-          Алфавит
-        </RouterLink>
-        <RouterLink to="/georgizator">
-          Грузификатор
-        </RouterLink>
-      </nav>
-    </div>
-  </header>
-  <RouterView />
+  </div>
+  <AlphabetView />
+  <GeorgizatorView />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { RouterLink, RouterView } from 'vue-router';
+// import { RouterLink, RouterView } from 'vue-router';
 import { useGeorgizator } from '@/stores/georgizator.store';
+import AlphabetView from '@/views/AlphabetView.vue';
+import GeorgizatorView from '@/views/GeorgizatorView.vue';
 
 export default defineComponent({
   name: 'GeorgizatorApp',
   components: {
-    RouterLink,
-    RouterView,
+    // RouterLink,
+    // RouterView,
+    AlphabetView,
+    GeorgizatorView,
   },
   setup() {
     useGeorgizator().initMapping();
@@ -42,15 +34,24 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
 }
 
 .flag {
-  display: block;
-  margin: 32px;
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    margin: 16px;
+    top: 0;
+    left: 0;
+    width: 64px;
+  }
 }
 
 nav {
