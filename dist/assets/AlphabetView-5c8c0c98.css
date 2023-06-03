@@ -1,1 +1,0 @@
-.alphabet__wrapper{display:flex;flex-direction:column;flex-wrap:wrap;max-height:450px}.alphabet__letter{display:flex;align-items:center;justify-content:center;width:50px;margin:5px;cursor:pointer;transition:all .3s ease-in-out}.alphabet__letter:hover{background-color:#000;color:#fff}
