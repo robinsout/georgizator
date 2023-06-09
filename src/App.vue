@@ -51,7 +51,12 @@ header {
     top: 0;
     left: 0;
     width: 64px;
-    height: 100%;
+    height: 44px;
+
+    @media (min-width: 1024px) {
+      height: 44px;
+    }
+
     border: 1px solid var(--color-border);
   }
 }
