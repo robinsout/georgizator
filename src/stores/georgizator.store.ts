@@ -30,7 +30,9 @@ export const useGeorgizator = defineStore({
     processText(newInputText?: string) {
       this.inputText = newInputText || this.inputText;
 
-      this.setRandomSymbolsToTransform(this.inputText);
+      if (this.transformationMode === TransformationMode.RANDOM) {
+        this.setRandomSymbolsToTransform(this.inputText);
+      }
 
       const transformedText = this.inputText.split('').map((char) => {
         const georgizatorChar = this.cyrillicMapping[char.toLowerCase()]?.georgian.letter;
@@ -64,6 +66,20 @@ export const useGeorgizator = defineStore({
       });
 
       this.symbolsToTransform = symbolsToTransform;
+    },
+    updateSelectedSymbols(char: string) {
+      this.setTransformationMode(TransformationMode.CUSTOM);
+      if (this.symbolsToTransform.includes(char)) {
+        this.symbolsToTransform = this.symbolsToTransform.filter((symbol) => symbol !== char);
+        this.processText();
+        return;
+      }
+
+      this.symbolsToTransform.push(char);
+      this.processText();
+    },
+    setTransformationMode(mode: TransformationMode) {
+      this.transformationMode = mode;
     },
   },
 });

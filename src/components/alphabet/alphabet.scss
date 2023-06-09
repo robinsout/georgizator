@@ -20,10 +20,23 @@
     margin: 5px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+
+    font-weight: 600;
 
     &:hover {
-    background-color: #000;
-    color: #fff;
+      background-color: #000;
+      color: #fff;
+    }
+
+    &_selected {
+      background-color: #fff;
+      color: #f30;
+
+      &:hover {
+        background-color: #ccc;
+        color: #f30;
+      }
     }
   }
 }

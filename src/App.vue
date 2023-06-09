@@ -34,7 +34,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -104,5 +104,11 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 1rem 0;
 }
 </style>

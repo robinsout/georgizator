@@ -1,13 +1,26 @@
 <template>
   <div class="georgizator">
     <div class="georgizator__transformation-percent">
-      <span class="georgizator__label">Процент грузификации алфавита: </span>
-      <select v-model="transliterationPercent" class="georgizator__transformation-percent__select">
-        <option v-for="percent in transformPercents" :key="percent" :value="percent">
-          {{ percent }}
+      <span class="georgizator__label">Режим:</span>
+      <span class="georgizator__value">{{ currentGeorgizationModeTitle }}</span>
+    </div>
+    <div class="georgizator__transformation-percent">
+      <span class="georgizator__label">Грузификации алфавита: </span>
+      <select
+        v-model="transliterationPercent"
+        class="georgizator__value georgizator__transformation-percent__select"
+        :class="{ 'georgizator__transformation-percent__select_inactive': isCustomMode }"
+      >
+        <option
+          v-for="percent in transformPercents"
+          :key="percent"
+          :value="percent"
+        >
+          <span>{{ percent }}%</span>
         </option>
       </select>
     </div>
+    <hr>
     <div class="georgizator__content-wrapper">
       <span class="georgizator__label">Исходный текст</span>
       <div
