@@ -51,6 +51,8 @@ header {
     top: 0;
     left: 0;
     width: 64px;
+    height: 100%;
+    border: 1px solid var(--color-border);
   }
 }
 

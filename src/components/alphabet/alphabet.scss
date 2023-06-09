@@ -13,29 +13,30 @@
   }
 
   &__letter {
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    padding: 3px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
+    width: 55px;
     margin: 5px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    border-radius: 5px;
 
     font-weight: 600;
 
     &:hover {
-      background-color: #000;
-      color: #fff;
+      border: 1px solid var(--vt-c-text-light-1);
     }
 
     &_selected {
-      background-color: #fff;
-      color: #f30;
+      background-color: var(--vt-c-text-light-1);
+      color: var(--vt-c-text-dark-2);
 
       &:hover {
-        background-color: #ccc;
-        color: #f30;
+        background-color: var(--vt-c-text-light-2);
       }
     }
   }
