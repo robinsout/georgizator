@@ -15,7 +15,7 @@
     "skipLibCheck": true,
     "baseUrl": "./src",
     "types": ["vue", "node"],
-    "lib": ["webworker", "es2020", "dom"],
+    "lib": ["webworker", "es2021", "dom"],
     "paths": {
       "@/*": ["*"],
       "@shared/*": ["shared/*"],
