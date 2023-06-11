@@ -35,10 +35,11 @@ export const useGeorgizator = defineStore({
       }
 
       const transformedText = this.inputText.split('').map((char) => {
-        const georgizatorChar = this.cyrillicMapping[char.toLowerCase()]?.georgian.letter;
+        const inputChar = char.toLowerCase();
 
-        const transformedChar = this.symbolsToTransform.includes(char.toLowerCase())
-          ? (georgizatorChar || char)
+        const georgianChar = this.cyrillicMapping[inputChar]?.georgian.letter;
+        const transformedChar = this.symbolsToTransform.includes(inputChar)
+          ? (georgianChar || char)
           : char;
 
         return transformedChar;
@@ -60,22 +61,22 @@ export const useGeorgizator = defineStore({
           return false;
         }
 
-        return (Math.random() * 100) < this.transliterationPercent
-          ? char.toLowerCase()
-          : false;
+        return (Math.random() * 100) < this.transliterationPercent;
       });
 
-      this.symbolsToTransform = symbolsToTransform;
+      this.symbolsToTransform = symbolsToTransform.map((char) => char.toLowerCase());
     },
     updateSelectedSymbols(char: string) {
+      const inputChar = char.toLowerCase();
+
       this.setTransformationMode(TransformationMode.CUSTOM);
-      if (this.symbolsToTransform.includes(char)) {
-        this.symbolsToTransform = this.symbolsToTransform.filter((symbol) => symbol !== char);
+      if (this.symbolsToTransform.includes(inputChar)) {
+        this.symbolsToTransform = this.symbolsToTransform.filter((symbol) => symbol !== inputChar);
         this.processText();
         return;
       }
 
-      this.symbolsToTransform.push(char);
+      this.symbolsToTransform.push(inputChar);
       this.processText();
     },
     setTransformationMode(mode: TransformationMode) {
