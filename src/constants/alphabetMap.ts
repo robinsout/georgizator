@@ -5,6 +5,7 @@ type Letter = {
   letter: string;
 }
 type LetterMapping = {
+  isComplex?: boolean;
   georgian: Letter;
   latin: Letter;
   cyrillic: Letter;
@@ -112,6 +113,7 @@ export const alphabetMap: AlphabetMap = {
     },
   },
   te: {
+    isComplex: true,
     georgian: {
       order: 8,
       letter: 'თ',
@@ -140,6 +142,7 @@ export const alphabetMap: AlphabetMap = {
     },
   },
   k: {
+    isComplex: true,
     georgian: {
       order: 10,
       letter: 'კ',
@@ -294,6 +297,7 @@ export const alphabetMap: AlphabetMap = {
     },
   },
   pe: {
+    isComplex: true,
     georgian: {
       order: 21,
       letter: 'ფ',
@@ -308,6 +312,7 @@ export const alphabetMap: AlphabetMap = {
     },
   },
   q: {
+    isComplex: true,
     georgian: {
       order: 22,
       letter: 'ქ',
@@ -322,6 +327,7 @@ export const alphabetMap: AlphabetMap = {
     },
   },
   gh: {
+    isComplex: true,
     georgian: {
       order: 23,
       letter: 'ღ',
@@ -364,6 +370,7 @@ export const alphabetMap: AlphabetMap = {
     },
   },
   ch: {
+    isComplex: true,
     georgian: {
       order: 26,
       letter: 'ჩ',
@@ -378,6 +385,7 @@ export const alphabetMap: AlphabetMap = {
     },
   },
   ts: {
+    isComplex: true,
     georgian: {
       order: 27,
       letter: 'ც',
@@ -392,6 +400,7 @@ export const alphabetMap: AlphabetMap = {
     },
   },
   dz: {
+    isComplex: true,
     georgian: {
       order: 28,
       letter: 'ძ',
@@ -448,6 +457,7 @@ export const alphabetMap: AlphabetMap = {
     },
   },
   jh: {
+    isComplex: true,
     georgian: {
       order: 32,
       letter: 'ჯ',
@@ -462,6 +472,7 @@ export const alphabetMap: AlphabetMap = {
     },
   },
   h: {
+    isComplex: true,
     georgian: {
       order: 33,
       letter: 'ჰ',

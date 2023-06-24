@@ -31,21 +31,16 @@ export const useGeorgizator = defineStore({
       this.inputText = newInputText || this.inputText;
 
       if (this.transformationMode === TransformationMode.RANDOM) {
-        this.setRandomSymbolsToTransform(this.inputText);
+        this.setRandomSymbolsToTransform(this.inputText.toLowerCase());
       }
 
-      const transformedText = this.inputText.split('').map((char) => {
-        const inputChar = char.toLowerCase();
+      let newText = this.inputText.toLowerCase();
 
-        const georgianChar = this.cyrillicMapping[inputChar]?.georgian.letter;
-        const transformedChar = this.symbolsToTransform.includes(inputChar)
-          ? (georgianChar || char)
-          : char;
+      this.symbolsToTransform.forEach((symbol) => {
+        newText = newText.replaceAll(symbol, this.cyrillicMapping[symbol]?.georgian.letter);
+      });
 
-        return transformedChar;
-      }).join('');
-
-      this.transformedText = transformedText;
+      this.transformedText = newText;
     },
     initMapping() {
       this.cyrillicMapping = createCyrillicMapping(alphabetMap);
@@ -55,7 +50,22 @@ export const useGeorgizator = defineStore({
         return;
       }
 
-      const inputTextSet = new Set(inputText.split(''));
+      const activeCyrillicSymbolsInText: string[] = [];
+
+      const cyrillicSymbols = Object.keys(this.cyrillicMapping);
+      const complexCyrillicSymbols = cyrillicSymbols.filter((symbol) => this.cyrillicMapping[symbol]?.isComplex);
+      const simpleCyrillicSymbols = cyrillicSymbols.filter((symbol) => !this.cyrillicMapping[symbol]?.isComplex);
+      const sortedCyrillicSymbols = [...complexCyrillicSymbols, ...simpleCyrillicSymbols];
+
+      sortedCyrillicSymbols.forEach((symbol) => {
+        if (!inputText.includes(symbol)) {
+          return;
+        }
+
+        activeCyrillicSymbolsInText.push(symbol);
+      });
+
+      const inputTextSet = new Set(activeCyrillicSymbolsInText);
       const symbolsToTransform = Array.from(inputTextSet).filter((char) => {
         if (!char.match(/\p{Letter}/gu)) {
           return false;
