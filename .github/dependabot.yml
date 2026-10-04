@@ -1,0 +1,7 @@
+# Weekly update PRs for the GitHub Actions of the deploy workflow.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
